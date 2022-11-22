@@ -4,6 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "setup": "yarn && node scripts/setup.js",
+    "grammar:build": "yarn workspace @pgs/grammar build",
+    "grammar:generate": "yarn workspace @pgs/grammar generate",
+    "interface:dev": "yarn workspace @pgs/interface start",
+    "interface:deploy": "yarn workspace @pgs/interface build && yarn workspace @pgs/interface deploy"
+  },
   "workspaces": [
     "workspaces/grammar",
     "workspaces/react"

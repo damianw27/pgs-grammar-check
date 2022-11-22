@@ -5,6 +5,7 @@ import Editor from 'react-simple-code-editor';
 
 import './code-editor.css';
 import 'prismjs/themes/prism.css';
+import { pgsLanguage } from './consts/pgs-language';
 
 const NEW_LINE_SIGN = '\n';
 
@@ -13,7 +14,7 @@ export const CodeEditor = (props: CodeEditorProps): ReactElement => {
     `<span class="editor-line-number">${index + 1}</span>${line}`;
 
   const highlightWithLineNumbers = (input: string): string =>
-    highlight(input, languages.txt, 'txt')
+    highlight(input, pgsLanguage, 'pgs')
       .split(NEW_LINE_SIGN)
       .map(assemblyLine)
       .join(NEW_LINE_SIGN);

@@ -1,9 +1,9 @@
 {
   "name": "@pgs/interface",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "src/index.js",
-  "homepage": "https://damianw27.github.io",
+  "homepage": "https://damianw27.github.io/pgs-grammar-check/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -33,6 +33,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.11",
     "gh-pages": "^4.0.0",
+    "node": "^19.1.0",
     "react-scripts": "^4.0.0",
     "typescript": "^3.2.1"
   },
