@@ -2,27 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { CodeEditor } from './components/code-editor/code-editor';
 import { useParser } from './hooks/parser/parser';
 import { ErrorsList } from './components/errors-list/errors-list';
-
-const defaultQuery = `
-CREATE GRAPH TYPE FraudGraphType {
-  (PersonType: Person {name STRING}),
-  (CustomerType: PersonType  {c_id INT32}),
-  (CreditCardType: CreditCard {cc_num STRING}),
-  (TransactionType: Transaction {cc_num STRING}),
-  (AccountType: Account {acct_id INT32}),
-  (:CustomerType)-[OwnsAccountType: owns]->(:AccountType),
-  (:CustomerType)-[UsesCreditCardType: uses]->(:CreditCardType),
-  (:TransactionType)-[ActivityType: Withdraw {time DATETIME}]->(:AccountType)
-}
-`;
+import { Examples } from './components/examples-list/examples';
+import { queriesExamples } from './components/examples-list/queries-examples';
 
 export function App() {
-  const [query, setQuery] = useState<string>(defaultQuery);
+  const [query, setQuery] = useState<string>('\n\n\n\n\n\n');
 
   const parser = useParser();
 
   useEffect(() => {
-    parser.parse(query);
+    let trimmedQuery = query.trim();
+
+    if (trimmedQuery === '') {
+      return;
+    }
+
+    parser.parse(trimmedQuery);
   }, [query]);
 
   return (
@@ -33,6 +28,8 @@ export function App() {
       />
 
       <ErrorsList errors={parser.errors} />
+
+      <Examples examples={queriesExamples} onExampleClick={setQuery} />
     </div>
   );
 }
