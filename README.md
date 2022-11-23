@@ -1,7 +1,7 @@
 # PGS Grammar Check
 [![DOI](https://zenodo.org/badge/569036893.svg)](https://zenodo.org/badge/latestdoi/569036893)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Generic badge](https://img.shields.io/badge/Demo-Running-green.svg)](https://damianw27.github.io/pgs-grammar-check/)
+[![Generic badge](https://img.shields.io/badge/Demo-Website-green.svg)](https://damianw27.github.io/pgs-grammar-check/)
 
 ### Project setup
 
