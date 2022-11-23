@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/pgs-grammar-check/static/css/main.d9e25ca6.chunk.css",
-    "main.js": "/pgs-grammar-check/static/js/main.5e826e7a.chunk.js",
-    "main.js.map": "/pgs-grammar-check/static/js/main.5e826e7a.chunk.js.map",
+    "main.css": "/pgs-grammar-check/static/css/main.bf981d4d.chunk.css",
+    "main.js": "/pgs-grammar-check/static/js/main.9b317635.chunk.js",
+    "main.js.map": "/pgs-grammar-check/static/js/main.9b317635.chunk.js.map",
     "runtime-main.js": "/pgs-grammar-check/static/js/runtime-main.dd315c6a.js",
     "runtime-main.js.map": "/pgs-grammar-check/static/js/runtime-main.dd315c6a.js.map",
     "static/css/2.61b46c1f.chunk.css": "/pgs-grammar-check/static/css/2.61b46c1f.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.b4e8c0eb.chunk.js.map": "/pgs-grammar-check/static/js/2.b4e8c0eb.chunk.js.map",
     "index.html": "/pgs-grammar-check/index.html",
     "static/css/2.61b46c1f.chunk.css.map": "/pgs-grammar-check/static/css/2.61b46c1f.chunk.css.map",
-    "static/css/main.d9e25ca6.chunk.css.map": "/pgs-grammar-check/static/css/main.d9e25ca6.chunk.css.map",
+    "static/css/main.bf981d4d.chunk.css.map": "/pgs-grammar-check/static/css/main.bf981d4d.chunk.css.map",
     "static/js/2.b4e8c0eb.chunk.js.LICENSE.txt": "/pgs-grammar-check/static/js/2.b4e8c0eb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dd315c6a.js",
     "static/css/2.61b46c1f.chunk.css",
     "static/js/2.b4e8c0eb.chunk.js",
-    "static/css/main.d9e25ca6.chunk.css",
-    "static/js/main.5e826e7a.chunk.js"
+    "static/css/main.bf981d4d.chunk.css",
+    "static/js/main.9b317635.chunk.js"
   ]
 }
