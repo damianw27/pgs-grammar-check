@@ -1,4 +1,4 @@
-import { ParserError } from '../../../hooks/parser/types/parser-error';
+import { ParserError } from '@pgs/grammar/dist/types/parser-error';
 
 export interface ErrorsListProps {
   readonly errors: ParserError[];

@@ -27,6 +27,15 @@
   font-weight: bold;
 }
 
+.editor pre .reference {
+  color: #d70071;
+  font-style: italic;
+}
+
+.editor pre .definition {
+  color: #86004a;
+}
+
 .editor .editor-line-number {
   font-family: 'jetbrains-mono', monospace;
   position: absolute;

@@ -1,5 +1,5 @@
 export interface ParserError {
-  readonly linePosition: number;
+  readonly lineIndex: number;
   readonly charPosition: number;
   readonly message: string;
 }

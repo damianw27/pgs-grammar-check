@@ -25,10 +25,13 @@ elementType
     : typeName | nodeType | edgeType ;
 
 nodeType
-    : '(' SP? typeName SP? labelPropertySpec SP? ')' ;
+    : ABSTRACT? SP '(' SP? typeName labelPropertySpec SP? ')' ;
 
 edgeType
-    : endpointType SP? dash SP? '[' SP? typeName SP? labelPropertySpec SP? ']' SP? dash rightArrowHead SP? endpointType ;
+    : endpointType dash middleType dash rightArrowHead endpointType ;
+
+middleType
+    : '[' SP? typeName SP? labelPropertySpec SP? ']' ;
 
 endpointType
     : '(' SP? labelPropertySpec SP? ')' ;
@@ -72,6 +75,7 @@ OPTIONAL : ( 'o' | 'O' ) ( 'p' | 'P' ) ( 't' | 'T' ) ( 'i' | 'I' ) ( 'o' | 'O' )
 TYPE : ( 't' | 'T' ) ( 'y' | 'Y' ) ( 'p' | 'P' ) ( 'e' | 'E' ) ;
 GRAPH : ( 'g' | 'G' ) ( 'r' | 'R' ) ( 'a' | 'A' ) ( 'p' | 'P' ) ( 'h' | 'H' ) ;
 STRICT : ( 's' | 'S' ) ( 't' | 'T' ) ( 'r' | 'R' ) ( 'i' | 'I' ) ( 'c' | 'C' ) ( 't' | 'T' ) ;
+ABSTRACT : ( 'a' | 'A' ) ( 'b' | 'B' ) ( 's' | 'S' ) ( 't' | 'T' ) ( 'r' | 'R' ) ( 'a' | 'A' ) ( 'c' | 'C' ) ( 't' | 'T' ) ;
 
 SP
     :  ( WHITESPACE )+ ;
