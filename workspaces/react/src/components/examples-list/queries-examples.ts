@@ -56,11 +56,4 @@ export const queriesExamples: Example[] = [
     title: 'Abstract node example',
     query: 'CREATE NODE TYPE ABSTRACT\n  (PersonType: Person {name STRING})',
   },
-  {
-    title: 'Abstract node example',
-    query:
-      'CREATE NODE TYPE ABSTRACT\n' +
-      '  (salariedType { salary INT })\n' +
-      '  (employeeType: personType & salariedType)',
-  },
 ];
