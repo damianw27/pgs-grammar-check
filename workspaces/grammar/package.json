@@ -3,28 +3,28 @@
   "version": "1.0.0",
   "main": "dist/public-api.js",
   "types": "dist/public-api.ts",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "license": "MIT",
   "scripts": {
-    "generate": "antlr4ts -visitor antlr/pgs.g4",
+    "generate": "node script/generate.js",
     "build": "tsc"
   },
-  "peerDependencies": {
-    "antlr4ts": "~0.5.0-alpha.4"
-  },
   "dependencies": {
-    "antlr4ts": "~0.5.0-alpha.4",
+    "antlr4": "^4.11.0",
     "tslib": "~2.4.0",
     "typescript": "~4.9.0"
   },
   "devDependencies": {
-    "antlr4ts-cli": "~0.5.0-alpha.4",
-    "eslint-plugin-prettier": "~4.2.0",
-    "prettier": "~2.7.0",
+    "@types/antlr4": "^4.11.1",
     "@typescript-eslint/eslint-plugin": "~5.43.0",
     "@typescript-eslint/parser": "~5.43.0",
     "eslint": "8.22.0",
     "eslint-config-alloy": "~4.7.0",
-    "eslint-config-prettier": "~8.5.0"
+    "eslint-config-prettier": "~8.5.0",
+    "eslint-plugin-prettier": "~4.2.0",
+    "node": "^19.1.0",
+    "prettier": "~2.7.0"
   }
 }

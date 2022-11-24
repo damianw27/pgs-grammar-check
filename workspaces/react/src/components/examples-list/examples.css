@@ -13,11 +13,11 @@
   font-size: 1rem;
   line-height: 1.5;
   width: calc(100% - 1.5rem - 2px);
-  color: #3d566e;
+  color: #383838;
   background-color: #fff;
   background-image: none;
   background-clip: padding-box;
-  border: 1px solid #e1e3e6;
+  border: 1px solid #ced4da;
   border-radius: 4px;
   margin-bottom: 0.5rem;
 }

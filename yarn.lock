@@ -1503,7 +1503,7 @@
 "@pgs/grammar@file:workspaces/grammar":
   version "1.0.0"
   dependencies:
-    antlr4ts "~0.5.0-alpha.4"
+    antlr4 "^4.11.0"
     tslib "~2.4.0"
     typescript "~4.9.0"
 
@@ -1676,6 +1676,11 @@
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
+
+"@types/antlr4@^4.11.1":
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/@types/antlr4/-/antlr4-4.11.1.tgz#d9cfb5bbbe75725ee86ec295912725e6c8cd0f45"
+  integrity sha512-mMScvMqoAgY22dbvlqoJWFH9V9RQLUd3YK5KX+lLXFYtC/2DYl/nBWjmqJfh3anlUPwAcU/KlLXhYhfHeTGKUQ==
 
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.20"
@@ -2498,12 +2503,12 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
-antlr4ts-cli@~0.5.0-alpha.4:
-  version "0.5.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/antlr4ts-cli/-/antlr4ts-cli-0.5.0-alpha.4.tgz#f3bfc37f10131e78d7b981c397a2aaa0450b67f6"
-  integrity sha512-lVPVBTA2CVHRYILSKilL6Jd4hAumhSZZWA7UbQNQrmaSSj7dPmmYaN4bOmZG79cOy0lS00i4LY68JZZjZMWVrw==
+antlr4@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/antlr4/-/antlr4-4.11.0.tgz#d7466f5044fa6e333c0ec821b30c6157f6b004ae"
+  integrity sha512-GUGlpE2JUjAN+G8G5vY+nOoeyNhHsXoIJwP1XF1oRw89vifA1K46T6SEkwLwr7drihN7I/lf0DIjKc4OZvBX8w==
 
-antlr4ts@^0.5.0-alpha.4, antlr4ts@~0.5.0-alpha.4:
+antlr4ts@^0.5.0-alpha.4:
   version "0.5.0-alpha.4"
   resolved "https://registry.yarnpkg.com/antlr4ts/-/antlr4ts-0.5.0-alpha.4.tgz#71702865a87478ed0b40c0709f422cf14d51652a"
   integrity sha512-WPQDt1B74OfPv/IMS2ekXAKkTZIHl88uMetg6q3OTqgFxZ/dxDXI0EWLyZid/1Pe6hTftyg5N7gel5wNAGxXyQ==
