@@ -1,6 +1,6 @@
 {
   "name": "@pgs/grammar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/public-api.js",
   "types": "dist/public-api.ts",
   "files": [
