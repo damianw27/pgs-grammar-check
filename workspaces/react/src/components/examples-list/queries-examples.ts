@@ -54,6 +54,31 @@ export const queriesExamples: Example[] = [
   },
   {
     title: 'Abstract node example',
-    query: 'CREATE NODE TYPE ABSTRACT\n  (PersonType: Person {name STRING})',
+    query: 'CREATE NODE TYPE ABSTRACT (salariedType { salary INT })',
+  },
+  {
+    title: 'Strict graph example',
+    query:
+      'CREATE GRAPH TYPE CatalogGraphType STRICT {\n' +
+      '  (CatalogType: Catalog {id INT}),\n' +
+      '  (DataResourceType: DataResource),\n' +
+      '  (DatabaseType: DataResourceType {path STRING, owner STRING}),\n' +
+      '  (TableType: DataResourceType {id INT, name STRING}),\n' +
+      '  (ColumnType: DataResourceType {id INT, name STRING, dataType STRING}),\n' +
+      '  (GraphType: DataResourceType {id INT, name STRING}),\n' +
+      '  (:CatalogType)-[HasResourceType: hasResource {since DATE}]->(:DataResourceType),\n' +
+      '  (:DataResourceType)-[DerivedFromType: derivedFrom {since DATE}]->(:DataResourceType),\n' +
+      '  (:DatabaseType)-[HasTableType: hasTable {since DATE}]->(:TableType),\n' +
+      '  (:TableType)-[HasColumnType: hasColumn {since DATE}]->(:ColumnType)\n' +
+      '}',
+  },
+  {
+    title: 'Node type example',
+    query:
+      'CREATE NODE TYPE (personType: Person {name STRING , OPTIONAL birthday DATE})',
+  },
+  {
+    title: 'Imports example',
+    query: 'CREATE GRAPH TYPE fraudGraphType STRICT IMPORTS socialGraphType',
   },
 ];

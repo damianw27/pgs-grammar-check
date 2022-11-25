@@ -59,6 +59,24 @@ export default class pgsListener extends antlr4.tree.ParseTreeListener {
 	}
 
 
+	// Enter a parse tree produced by pgsParser#typeForm.
+	enterTypeForm(ctx) {
+	}
+
+	// Exit a parse tree produced by pgsParser#typeForm.
+	exitTypeForm(ctx) {
+	}
+
+
+	// Enter a parse tree produced by pgsParser#graphTypeDefinition.
+	enterGraphTypeDefinition(ctx) {
+	}
+
+	// Exit a parse tree produced by pgsParser#graphTypeDefinition.
+	exitGraphTypeDefinition(ctx) {
+	}
+
+
 	// Enter a parse tree produced by pgsParser#elementTypes.
 	enterElementTypes(ctx) {
 	}
