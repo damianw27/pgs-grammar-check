@@ -22,7 +22,7 @@ typeForm
     : STRICT | LOOSE ;
 
 graphTypeDefinition
-    : ('{' SP? elementTypes? SP? '}') | (IMPORTS SP typeName) ;
+    : (IMPORTS SP typeName)? SP? '{' SP? elementTypes? SP? '}';
 
 elementTypes
     :  elementType (SP? ',' SP? elementType)* ;
@@ -34,7 +34,7 @@ nodeType
     : '(' SP? typeName labelPropertySpec SP? ')' ;
 
 edgeType
-    : endpointType dash middleType dash rightArrowHead endpointType ;
+    : endpointType SP? dash SP? middleType SP? dash rightArrowHead SP? endpointType ;
 
 middleType
     : '[' SP? typeName SP? labelPropertySpec SP? ']' ;
