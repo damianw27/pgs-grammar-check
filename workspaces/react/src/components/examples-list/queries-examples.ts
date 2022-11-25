@@ -4,7 +4,7 @@ export const queriesExamples: Example[] = [
   {
     title: 'Fraud graph example',
     query:
-      'CREATE GRAPH TYPE FraudGraphType {\n' +
+      'CREATE GRAPH TYPE FraudGraphType STRICT {\n' +
       '  (PersonType: Person {name STRING}),\n' +
       '  (CustomerType: PersonType & Customer {c_id INT32}),\n' +
       '  (CreditCardType: CreditCard {cc_num STRING}),\n' +
@@ -17,7 +17,23 @@ export const queriesExamples: Example[] = [
       '}',
   },
   {
-    title: 'Optional example',
+    title: 'Catalog graph example',
+    query:
+      'CREATE GRAPH TYPE CatalogGraphType STRICT {\n' +
+      '  (CatalogType: Catalog {id INT}),\n' +
+      '  (DataResourceType: DataResource),\n' +
+      '  (DatabaseType: DataResourceType {path STRING, owner STRING}),\n' +
+      '  (TableType: DataResourceType {id INT, name STRING}),\n' +
+      '  (ColumnType: DataResourceType {id INT, name STRING, dataType STRING}),\n' +
+      '  (GraphType: DataResourceType {id INT, name STRING}),\n' +
+      '  (:CatalogType)-[HasResourceType: hasResource {since DATE}]->(:DataResourceType),\n' +
+      '  (:DataResourceType)-[DerivedFromType: derivedFrom {since DATE}]->(:DataResourceType),\n' +
+      '  (:DatabaseType)-[HasTableType: hasTable {since DATE}]->(:TableType),\n' +
+      '  (:TableType)-[HasColumnType: hasColumn {since DATE}]->(:ColumnType)\n' +
+      '}',
+  },
+  {
+    title: 'Create graph example with optional in node',
     query:
       'CREATE GRAPH TYPE Test {\n' +
       '  (PersonType: Person\n' +
@@ -47,6 +63,11 @@ export const queriesExamples: Example[] = [
       '}',
   },
   {
+    title: 'Imports example',
+    query:
+      'CREATE GRAPH TYPE fraudGraphType STRICT IMPORTS socialGraphType\n\n',
+  },
+  {
     title: 'Edge type example',
     query:
       'CREATE EDGE TYPE\n' +
@@ -57,28 +78,8 @@ export const queriesExamples: Example[] = [
     query: 'CREATE NODE TYPE ABSTRACT (salariedType { salary INT })',
   },
   {
-    title: 'Strict graph example',
-    query:
-      'CREATE GRAPH TYPE CatalogGraphType STRICT {\n' +
-      '  (CatalogType: Catalog {id INT}),\n' +
-      '  (DataResourceType: DataResource),\n' +
-      '  (DatabaseType: DataResourceType {path STRING, owner STRING}),\n' +
-      '  (TableType: DataResourceType {id INT, name STRING}),\n' +
-      '  (ColumnType: DataResourceType {id INT, name STRING, dataType STRING}),\n' +
-      '  (GraphType: DataResourceType {id INT, name STRING}),\n' +
-      '  (:CatalogType)-[HasResourceType: hasResource {since DATE}]->(:DataResourceType),\n' +
-      '  (:DataResourceType)-[DerivedFromType: derivedFrom {since DATE}]->(:DataResourceType),\n' +
-      '  (:DatabaseType)-[HasTableType: hasTable {since DATE}]->(:TableType),\n' +
-      '  (:TableType)-[HasColumnType: hasColumn {since DATE}]->(:ColumnType)\n' +
-      '}',
-  },
-  {
     title: 'Node type example',
     query:
-      'CREATE NODE TYPE (personType: Person {name STRING , OPTIONAL birthday DATE})',
-  },
-  {
-    title: 'Imports example',
-    query: 'CREATE GRAPH TYPE fraudGraphType STRICT IMPORTS socialGraphType',
+      'CREATE NODE TYPE (personType: Person {name STRING , OPTIONAL birthday DATE})\n\n',
   },
 ];
