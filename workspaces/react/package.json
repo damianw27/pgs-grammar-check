@@ -1,6 +1,6 @@
 {
   "name": "@pgs/interface",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "main": "src/index.js",
   "homepage": "https://damianw27.github.io/pgs-grammar-check/",
