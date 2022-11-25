@@ -4,7 +4,7 @@ export const queriesExamples: Example[] = [
   {
     title: 'Fraud graph example',
     query:
-      'CREATE GRAPH TYPE FraudGraphType STRICT {\n' +
+      'CREATE GRAPH TYPE FraudGraphType LOOSE {\n' +
       '  (PersonType: Person {name STRING}),\n' +
       '  (CustomerType: PersonType & Customer {c_id INT32}),\n' +
       '  (CreditCardType: CreditCard {cc_num STRING}),\n' +
@@ -35,7 +35,7 @@ export const queriesExamples: Example[] = [
   {
     title: 'Create graph example with optional in node',
     query:
-      'CREATE GRAPH TYPE Test {\n' +
+      'CREATE GRAPH TYPE Test STRICT {\n' +
       '  (PersonType: Person\n' +
       '    {name STRING, OPTIONAL birthday DATE})\n' +
       '}\n',
@@ -43,21 +43,21 @@ export const queriesExamples: Example[] = [
   {
     title: 'Buddy edge example',
     query:
-      'CREATE GRAPH TYPE Test {\n' +
+      'CREATE GRAPH TYPE Test STRICT {\n' +
       '  (:EmployeeType)-[BuddyType: FriendType {since DATE, casual BOOL}]->(:EmployeeType)\n' +
       '}\n',
   },
   {
     title: 'Friend edge type with & and | pipes example',
     query:
-      'CREATE GRAPH TYPE Test {\n' +
+      'CREATE GRAPH TYPE Test LOOSE {\n' +
       '  (:PersonType|CustomerType)-[FriendType: Knows & Likes {since DATE}]->(:PersonType|CustomerType)\n' +
       '}\n',
   },
   {
     title: 'Person customer inheritance example',
     query:
-      'CREATE GRAPH TYPE Test {\n' +
+      'CREATE GRAPH TYPE Test LOOSE {\n' +
       '  (CustomerType: Person & Customer\n' +
       '    {name STRING, OPTIONAL since DATE})\n' +
       '}\n',
