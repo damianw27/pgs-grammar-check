@@ -7,16 +7,22 @@ createType
     : createNodeType | createEdgeType | createGraphType ;
 
 createNodeType
-    : CREATE SP NODE SP TYPE SP nodeType ;
+    : CREATE SP NODE SP TYPE SP (ABSTRACT SP)? nodeType ;
 
 createEdgeType
-    : CREATE SP EDGE SP TYPE SP edgeType ;
+    : CREATE SP EDGE SP TYPE SP (ABSTRACT SP)? edgeType ;
 
 createGraphType
     : CREATE SP GRAPH SP TYPE SP graphType ;
 
 graphType
-    : typeName SP? STRICT? SP? '{' SP? elementTypes? SP? '}' ;
+    : typeName SP typeForm SP? graphTypeDefinition;
+
+typeForm
+    : STRICT | LOOSE ;
+
+graphTypeDefinition
+    : ('{' SP? elementTypes? SP? '}') | (IMPORTS SP typeName) ;
 
 elementTypes
     :  elementType (SP? ',' SP? elementType)* ;
@@ -25,7 +31,7 @@ elementType
     : typeName | nodeType | edgeType ;
 
 nodeType
-    : ABSTRACT? SP '(' SP? typeName labelPropertySpec SP? ')' ;
+    : '(' SP? typeName labelPropertySpec SP? ')' ;
 
 edgeType
     : endpointType dash middleType dash rightArrowHead endpointType ;
@@ -75,7 +81,9 @@ OPTIONAL : ( 'o' | 'O' ) ( 'p' | 'P' ) ( 't' | 'T' ) ( 'i' | 'I' ) ( 'o' | 'O' )
 TYPE : ( 't' | 'T' ) ( 'y' | 'Y' ) ( 'p' | 'P' ) ( 'e' | 'E' ) ;
 GRAPH : ( 'g' | 'G' ) ( 'r' | 'R' ) ( 'a' | 'A' ) ( 'p' | 'P' ) ( 'h' | 'H' ) ;
 STRICT : ( 's' | 'S' ) ( 't' | 'T' ) ( 'r' | 'R' ) ( 'i' | 'I' ) ( 'c' | 'C' ) ( 't' | 'T' ) ;
+LOOSE : ( 'l' | 'L' ) ( 'o' | 'O' ) ( 'o' | 'O' ) ( 's' | 'S' ) ( 'e' | 'E' ) ;
 ABSTRACT : ( 'a' | 'A' ) ( 'b' | 'B' ) ( 's' | 'S' ) ( 't' | 'T' ) ( 'r' | 'R' ) ( 'a' | 'A' ) ( 'c' | 'C' ) ( 't' | 'T' ) ;
+IMPORTS : ( 'i' | 'I' ) ( 'm' | 'M' ) ( 'p' | 'P' ) ( 'o' | 'O' ) ( 'r' | 'R' ) ( 't' | 'T' ) ( 's' | 'S' ) ;
 
 SP
     :  ( WHITESPACE )+ ;
@@ -119,27 +127,16 @@ fragment EscapedSymbolicName_0 : ~[`] ;
 fragment RS : [\u001E] ;
 
 fragment StringLiteral_1 : ~['\\] ;
-
 fragment GS : [\u001D] ;
-
 fragment FS : [\u001C] ;
-
 fragment CR : [\r] ;
-
 fragment SPACE : [ ] ;
-
 fragment TAB : [\t] ;
-
 fragment StringLiteral_0 : ~["\\] ;
-
 fragment LF : [\n] ;
-
 fragment VT : [\u000B] ;
-
 fragment US : [\u001F] ;
-
 StringLiteral : ('A'.. 'Z' | 'a'..'z' | '0'..'9' | '_' | '-' )+ ;
-
 EscapedChar
            :  '\\' ( '\\' | '\'' | '"' | ( ( 'B' | 'b' ) ) | ( ( 'F' | 'f' ) ) | ( ( 'N' | 'n' ) ) | ( ( 'R' | 'r' ) ) | ( ( 'T' | 't' ) ) | ( ( ( 'U' | 'u' ) ) ( HexDigit HexDigit HexDigit HexDigit ) ) | ( ( ( 'U' | 'u' ) ) ( HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit ) ) ) ;
 
