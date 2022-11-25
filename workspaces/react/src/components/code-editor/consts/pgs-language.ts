@@ -1,7 +1,7 @@
 export const pgsLanguage = {
   keyword: {
     pattern:
-      /\b(?:CREATE|create|NODE|node|EDGE|edge|GRAPH|graph|OPEN|open|OPTIONAL|optional|TYPE|type|STRICT|strict|ABSTRACT|abstract)\b/,
+      /\b(?:CREATE|create|NODE|node|EDGE|edge|GRAPH|graph|OPEN|open|OPTIONAL|optional|TYPE|type|STRICT|strict|ABSTRACT|abstract|LOOSE|loose|IMPORTS|imports)\b/,
     lookbehind: true,
     greedy: true,
   },
@@ -11,7 +11,7 @@ export const pgsLanguage = {
     lookbehind: true,
     greedy: true,
   },
-  definition: /[A-Za-z]+:/,
+  definition: /[A-Za-z]+ *:/,
   reference: /: *([A-Za-z]+) *([|&] *[A-Za-z]+)*/,
   string: /["'](?:\\.|[^\\"\r\n])*["']/,
   number: /-?\b\d+(?:\.\d+)?(?:e[+-]?\d+)?\b/i,
