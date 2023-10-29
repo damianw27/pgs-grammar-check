@@ -1,7 +1,7 @@
 const { execSync } = require('child_process');
 
 console.log('Cleaning output directory...');
-execSync('rm -r src/generated/*');
+execSync('rm -rf src/generated/*');
 
 console.log('Generating source from ANTLR grammar...');
 execSync('antlr4 -Dlanguage=JavaScript -o src/generated/ antlr/pgs.g4');
